@@ -58,9 +58,6 @@ public class GitHubSearchService {
         return new SearchResponse("Repositories fetched and saved successfully", saved);
     }
 
-    /**
-     * Same GitHub id → save() updates the row instead of inserting a duplicate.
-     */
     private GitHubRepository upsert(GitHubSearchResult result) {
         Instant lastUpdated = result.lastUpdated() != null ? result.lastUpdated() : Instant.now();
 
@@ -78,9 +75,6 @@ public class GitHubSearchService {
         return repository.save(entity);
     }
 
-    /**
-     * GitHub documents a 350-char limit, but search API can still return longer legacy text.
-     */
     private String truncateDescription(String description) {
         if (description == null || description.length() <= GitHubRepository.DESCRIPTION_MAX_LENGTH) {
             return description;

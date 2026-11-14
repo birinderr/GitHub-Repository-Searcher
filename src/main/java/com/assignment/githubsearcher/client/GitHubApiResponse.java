@@ -5,10 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;
 import java.util.List;
 
-/**
- * Matches GitHub's JSON shape for GET /search/repositories.
- * Field names differ from ours (stargazers_count vs stars) — Jackson maps them.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record GitHubApiResponse(
         List<GitHubRepoItem> items

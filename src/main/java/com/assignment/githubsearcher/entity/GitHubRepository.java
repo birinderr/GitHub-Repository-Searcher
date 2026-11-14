@@ -6,15 +6,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.Instant;
 
-/**
- * Maps one GitHub repo to one row in PostgreSQL.
- * The GitHub repository id is our primary key so re-saving the same repo updates it (upsert later).
- */
 @Entity
 @Table(name = "github_repositories")
 public class GitHubRepository {
 
-    /** GitHub's documented repository description max length. */
     public static final int DESCRIPTION_MAX_LENGTH = 350;
 
     @Id
@@ -41,7 +36,6 @@ public class GitHubRepository {
     private Instant lastUpdated;
 
     protected GitHubRepository() {
-        // Required by JPA
     }
 
     public GitHubRepository(
