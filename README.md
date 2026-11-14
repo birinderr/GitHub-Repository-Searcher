@@ -98,8 +98,7 @@ curl "http://localhost:8080/api/github/repositories?language=Java&minStars=100&s
 | `GITHUB_API_BASE_URL` | `https://api.github.com` | GitHub API base |
 | `SERVER_PORT` | `8080` | HTTP port |
 
-Local token tip: use gitignored `application-local.yml` (see example file).  
-On deploy: set the same variables in the host’s environment settings — never commit secrets.
+Local token tip: use gitignored `application-local.yml` (see example file). Never commit secrets.
 
 ## Tests
 
@@ -125,10 +124,3 @@ src/main/java/com/assignment/githubsearcher/
   service/       Business logic
 ```
 
-## Deploy notes
-
-1. Provision PostgreSQL and a JVM host (Railway, Render, Fly.io, etc.)
-2. Set `DATABASE_URL`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`, and optionally `GITHUB_TOKEN`
-3. Build: `./mvnw -DskipTests package`
-4. Run: `java -jar target/github-repository-searcher-0.0.1-SNAPSHOT.jar`
-5. Share the live URL + Swagger (`/swagger-ui.html`) for submission

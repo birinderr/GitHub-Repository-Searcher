@@ -3,10 +3,6 @@ package com.assignment.githubsearcher.dto;
 import com.assignment.githubsearcher.entity.GitHubRepository;
 import java.time.Instant;
 
-/**
- * What we send back in the API JSON.
- * We don't return the entity directly — keeps the DB model separate from the API contract.
- */
 public record RepositoryResponse(
         Long id,
         String name,

@@ -1,5 +1,3 @@
-# Copy to application-local.yml and paste your token:
-#   cp src/main/resources/application-local.yml.example src/main/resources/application-local.yml
 github:
   api:
     token: "ghp_paste_your_token_here"
